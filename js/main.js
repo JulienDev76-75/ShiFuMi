@@ -1,20 +1,24 @@
-//First step, a "choose name" pop up entering on the index
+//Fenêtre Pop-up message d'accueil en JS par la commande "alert"
 alert("Bienvenue au Mortal Shifumi");
 var username = prompt("Veuillez rentrer votre nom de Kombattant :");
 alert("Merci" + " " + username);
 
-//Second step : create an simple array :
+//création de tableaux Pierre, Feuille, Ciseaux ordonné simple
 var tabchoice = ["Pierre", "Feuille", "Ciseaux"]; {
 console.log(tabchoice);
-//then we create a message in the screen with a player name
 var Player = prompt("Veuillez choisir entre : " + tabchoice);
 alert("Merci"+ " " + username);
-// Je crée un choix aléatoire provenant d'un tableau ordonné simple, après avoir crée ce tableau tabchoice, je crée une nouvelle
-//variable appellé IACHOICE afin de lui appliquer le tableau tabchoice comprenant une formule rendant le choix à l'intérieur du tableau
-//aléatoire en leur donnant une valeur entière.
+
+//Le but de ce code est de donner une valeur aléatoire venant de TABCHOICE
+//On indique qu'on crée une var IACHOICE dont une valeur contenue DANS le tableau tabchoice sera sortie aléatoirement
+//Math.floor renvoie le plus grand entier qui est inférieur ou égal à un nombre x.
+//Math.random renvoie un nombre flottant pseudo-aléatoire compris dans l'intervalle 0, 1 selon une distribution approximativement uniforme sur cet intervalle
+//donc math.floor(math.random) génère un nombre aléatoire flottant qui sera transformé en ENTIER parmi les 3 choix  du tableau *3
 var IAchoice = tabchoice[Math.floor(Math.random()*3)];
 alert("l'ordinateur a choisi :" + IAchoice);
 
+//condition : ATTENTION j'ai essayé la sctructure IF ELSE IF et ELSE, mais ça ne marche pas, le dernier ELSE étant indiqué comme une erreur de syntaxe, les conditions IF et Else if 
+//fonctionnaient, mais j'ai du changé par une structure IF simple. Le code aurait pu être simplifié.
 if (Player === IAchoice) {
     alert("Egalité, il faut essayer de nouveau !");
 }
@@ -27,5 +31,5 @@ if ((Player === tabchoice[0] && IAchoice === tabchoice[1]) || (Player === tabcho
   alert("tu as perdu, mais ce n'est pas très étonnant");
   }
 }
-//Je sais ce que tu vas me dire Thomas, mais le else { alert("tu as perdu etc.") } après le elfe is m'indiquait une erreur de syntaxe, le else était encadré comme étant une erreur,
-// j'ai eu beau essayé, j'ai du contourner le problème
+
+

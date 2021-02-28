@@ -6,18 +6,21 @@ alert("Merci" + " " + username);
 //création de tableaux Pierre, Feuille, Ciseaux ordonné simple
 var tabchoice = ["Pierre", "Feuille", "Ciseaux"]; {
 console.log(tabchoice);
+var index = tabchoice;
+console.log(index[tabchoice]);
+
+//le but ici est que si le joueur ne rentre pas Pierre, Feuille ou Ciseaux, un message alerte et il faut choisir de nouveau
+for (var Player of tabchoice) {
 var Player = prompt("Veuillez choisir entre : " + tabchoice);
 alert("Merci"+ " " + username);
 
-//le but ici est que si le joueur ne rentre pas Pierre, Feuille ou Ciseaux, un message alerte et il faut choisir de nouveau
-
-if ((Player === "Pierre") || (Player === "Feuille") || (Player === "Ciseaux")) {
-  alert("vous avez choisi" + " : " + Player);
+if ((Player === tabchoice[0]) || (Player === tabchoice[1]) || (Player === tabchoice[2])) {
+  alert("Vous avez bien choisi");
 }
+
 else {
-  alert("veuillez rentrez un choix correct");
+  alert("Veuillez faire un choix correct");
 }
-
 
 //Le but de ce code est de donner une valeur aléatoire venant de TABCHOICE
 //On indique qu'on crée une var IACHOICE dont une valeur contenue DANS le tableau tabchoice sera sortie aléatoirement
@@ -41,4 +44,4 @@ if ((Player === tabchoice[0] && IAchoice === tabchoice[1]) || (Player === tabcho
   alert("tu as perdu, mais ce n'est pas très étonnant");
   }
 }
-
+}

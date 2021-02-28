@@ -6,8 +6,21 @@ alert("Merci" + " " + username);
 //création de tableaux Pierre, Feuille, Ciseaux ordonné simple
 var tabchoice = ["Pierre", "Feuille", "Ciseaux"]; {
 console.log(tabchoice);
+var index = tabchoice;
+console.log(index[tabchoice]);
+
+//le but ici est que si le joueur ne rentre pas Pierre, Feuille ou Ciseaux, un message alerte et il faut choisir de nouveau
+for (var Player of tabchoice) {
 var Player = prompt("Veuillez choisir entre : " + tabchoice);
 alert("Merci"+ " " + username);
+
+if ((Player === tabchoice[0]) || (Player === tabchoice[1]) || (Player === tabchoice[2])) {
+  alert("Vous avez bien choisi");
+}
+
+else {
+  alert("Veuillez faire un choix correct");
+}
 
 //Le but de ce code est de donner une valeur aléatoire venant de TABCHOICE
 //On indique qu'on crée une var IACHOICE dont une valeur contenue DANS le tableau tabchoice sera sortie aléatoirement
@@ -15,7 +28,7 @@ alert("Merci"+ " " + username);
 //Math.random renvoie un nombre flottant pseudo-aléatoire compris dans l'intervalle 0, 1 selon une distribution approximativement uniforme sur cet intervalle
 //donc math.floor(math.random) génère un nombre aléatoire flottant qui sera transformé en ENTIER parmi les 3 choix  du tableau *3
 var IAchoice = tabchoice[Math.floor(Math.random()*3)];
-alert("l'ordinateur a choisi :" + IAchoice);
+alert("l'ordinateur a choisi" + " : " + IAchoice);
 
 //condition : ATTENTION j'ai essayé la sctructure IF ELSE IF et ELSE, mais ça ne marche pas, le dernier ELSE étant indiqué comme une erreur de syntaxe, les conditions IF et Else if 
 //fonctionnaient, mais j'ai du changé par une structure IF simple. Le code aurait pu être simplifié.
@@ -31,5 +44,4 @@ if ((Player === tabchoice[0] && IAchoice === tabchoice[1]) || (Player === tabcho
   alert("tu as perdu, mais ce n'est pas très étonnant");
   }
 }
-
-
+}
